@@ -25,5 +25,5 @@ makeGrid = (rows, cols) => {
   };
 } 
 
-makeGrid(15,15);
+makeGrid(64,64);
 
