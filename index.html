@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>etch-a-scketch </title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="normalize.css">
+	<link rel="stylesheet" href="style.css">
+    <script src="app.js" defer></script>
+</head>
+<body>
+    <h1>Etch-A-Scketch</h1>
+    
+    <div id="container"></div>
+
+    <div class="opt-buttons">
+        <input type="color" id="my-color" value="#3333ff">
+        <button >Color Mode</button>
+        <button >Rainbow Mode</button>
+        <button>Erase</button>
+        <button>Clear</button>
+        <div class="slider-container">
+            <input type="range" min="1" max="64" value="20" class="slider" id="myRange">
+            <p><span id="demo"></span></p>
+        </div>
+    </div>  
+
+
+</body>
+</html>

@@ -1,0 +1,43 @@
+*,
+*:before,
+*:after {
+  box-sizing: border-box; /* includes the box border and margin in the overall box size */
+}
+html, body {
+    margin: 0;
+    padding: 0;
+    margin-bottom: 0;
+    text-align: center;
+}
+/* using css variables to make grid */
+:root {
+    --grid-cols: 1;
+    --grid-rows: 1;
+}
+
+#container{
+    width: 30%;
+    display: grid;
+    margin: auto;
+    /* background-color; */
+    grid-gap: .25em;
+    grid-template-rows: repeat(var(--grid-rows), 1fr);
+    grid-template-columns: repeat(var(--grid-cols), 1fr);  
+}
+.grid-item {
+    padding: 1em;
+    border: 1px solid black;
+    text-align: center;
+    aspect-ratio: 1;
+}
+
+/* center the grid and making it a square */
+ 
+
+/* styling buttons */
+button{
+    width: 5em;
+    padding: 1em;
+    border-radius: 12px;
+    border: 2px solid #c0c0c0;
+}
