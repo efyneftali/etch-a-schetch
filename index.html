@@ -9,21 +9,23 @@
 </head>
 <body>
     <h1>Etch-A-Scketch</h1>
-    
-    <div id="container"></div>
+    <div class="wrapper">
+        <div id="container"></div>
 
-    <div class="opt-buttons">
-        <input type="color" id="my-color" value="#3333ff">
-        <button >Color Mode</button>
-        <button >Rainbow Mode</button>
-        <button>Erase</button>
-        <button>Clear</button>
-        <div class="slider-container">
-            <input type="range" min="1" max="64" value="20" class="slider" id="myRange">
-            <p><span id="demo"></span></p>
-        </div>
+        <div class="opt-buttons">
+            <div id="color-picker">
+                <input type="color" id="my-color">
+            </div>
+            <button id="color-mode">Color Mode</button>
+            <button id="rainbow-mode">Rainbow Mode</button>
+            <button id="erase-mode">Erase</button>
+            <button id="clear-mode">Clear</button>
+            <div class="slider-container">
+                <input type="range" min="1" max="64" value="20" class="slider" id="myRange">
+                <p><span id="demo"></span></p>
+            </div>
+        </div>  
     </div>  
-
 
 </body>
 </html>

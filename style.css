@@ -15,26 +15,28 @@ html, body {
     --grid-rows: 1;
 }
 h1{
-    margin-top: 12px;
+    margin: 12px 0px 12px 0px;
     font-size: 6em;
 }
-.wrapper{
+/* .wrapper{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+
+} */
+
+.opt-buttons{
+    margin-top: 2px;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
 
 }
-
-.opt-buttons{
-    display: flex;
-    flex-direction: column;
-
-}
 #container{
-    width: 600px;
-    height: 600px;
+    width: 500px;
+    height: 500px;
     display: grid;
-    margin: 0;
+    margin: auto;
     /* background-color; */
     border: 10px solid black;
     /* grid-gap: .25em; */
@@ -43,9 +45,13 @@ h1{
 }
 .grid-item {
     border: 1px solid grey;
+    margin:0;
     text-align: center;
     aspect-ratio: 1;
 }
+/* .grid-item:hover{
+    background-color: black;
+} */
 
 /* center the grid and making it a square */
  
