@@ -26,11 +26,11 @@ h1{
 } */
 
 .opt-buttons{
-    margin-top: 2px;
+    margin-top: 5em;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-
+    align-items: center;
 }
 #container{
     width: 500px;
@@ -63,3 +63,4 @@ button{
     border-radius: 12px;
     border: 2px solid #c0c0c0;
 }
+

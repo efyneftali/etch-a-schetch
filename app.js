@@ -8,38 +8,54 @@ const rainbow_btn =  document.getElementById("rainbow-mode");
 const erase_btn =  document.getElementById("erase-mode");
 const clear_btn =  document.getElementById("clear-mode");
 
-const defaultColor = myColor.defaultValue;
-const currentColor = myColor.value;
 
-console.log(defaultColor);
-console.log(currentColor);
 
 output.innerHTML = `${slider.value} x ${slider.value}`;
-slider.oninput = function() {
-    output.innerHTML = `${this.value} x ${this.value}`;
-}
+// console.log(slider.value)
+
+slider.addEventListener('mouseup', function() {
+    container_div.innerHTML = ""
+    slider.onchange = function() {
+        output.innerHTML = `${this.value} x ${this.value}`;
+    }
+    console.log(slider.value)
+    makeGrid(slider.value, slider.value);
+    colorMode();
+    rainbowMode();
+    eraser();
+    clear(); 
+})
 
 makeGrid = (rows, cols) => {
     container_div.style.setProperty('--grid-rows', rows);
     container_div.style.setProperty('--grid-cols', cols);
     for (c = 0; c < (rows * cols); c++) {
         let cell = document.createElement("div");
-        // cell.innerText = (c + 1);
         container_div.appendChild(cell).className = "grid-item";
   };
 } 
 
+
 // default is color mode, and defaul == color black
 colorMode = () => {
+    let defaultColor = myColor.value;
+    console.log(defaultColor)
     const grid = document.querySelectorAll(".grid-item");
     color_btn.addEventListener('click', ()=>{
         grid.forEach(gridItem => gridItem.addEventListener('mouseover',()=>{
-            gridItem.style.background = "black"
+            gridItem.style.background = defaultColor
         }))
+        
         color_btn.style.background = "pink"
     })
-
-
+    myColor.addEventListener('input',()=>{
+        let color = myColor.value;
+        grid.forEach(gridItem => gridItem.addEventListener('mouseover',()=>{
+            gridItem.style.background = color  
+        }))
+        console.log(color)  
+    })
+    
 }
 
 // Rainbow mode, generate random color, apply it to five when you hover over it
@@ -50,7 +66,7 @@ rainbowMode = () => {
         grid.forEach(gridItem => gridItem.addEventListener('mouseover',()=>{
             gridItem.style.background = `${"#"+Math.floor(Math.random()*16777215).toString(16)}`
         }))
-        rainbow_btn.style.background = "yellow"
+        rainbow_btn.style.background = "yellow"   
     })
 } 
 
@@ -78,7 +94,9 @@ clear = () => {
 }
 
 
-makeGrid(4,4);
+// console.log(slider.value)
+
+makeGrid(20, 20);
 colorMode();
 rainbowMode();
 eraser();
